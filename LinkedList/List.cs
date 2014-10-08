@@ -89,7 +89,7 @@ namespace LinkedList
             while (tempNode != null)
             {
                 System.Console.WriteLine(tempNode.NodeContent);
-                System.Console.ReadLine();
+                //System.Console.ReadLine();
                 tempNode = tempNode.NextNode;
             }
         }

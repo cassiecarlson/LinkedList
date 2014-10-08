@@ -23,8 +23,7 @@ namespace LinkedList
 
             list.printNodes();
             Console.WriteLine();
-            Console.ReadLine();
-
+            
             Console.WriteLine();
             Console.WriteLine("Deleting node 8");
             list.Delete(8);
