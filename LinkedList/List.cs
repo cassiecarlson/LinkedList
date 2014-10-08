@@ -96,6 +96,58 @@ namespace LinkedList
 
         // retrival method to get the node in the specified position
         // will return null if no node exists at that location
-        
+        public Node RetreiveNode(int Position)
+        {
+            Node tempNode = headNode;
+            Node returnNode = null;
+            int count = 0;
+
+            while (tempNode != null)
+            {
+                if (count == Position - 1)
+                {
+                    returnNode = tempNode;
+                    break;
+                }
+                count++;
+                tempNode = tempNode.NextNode;
+            }
+            
+            return returnNode;
+        }
+
+        // delete a node in the specified position
+        public bool Delete(int Position)
+        {
+            if (Position == 1)
+            {
+                headNode = null;
+                currentNode = null;
+                return true;
+            }
+
+            if (Position > 1 && Position <= size)
+            {
+                Node tempNode = headNode;
+
+                Node lastNode = null;
+                int count = 0;
+
+                while (tempNode != null)
+                {
+                    if (count == Position - 1)
+                    {
+                        lastNode.NextNode = tempNode.NextNode;
+                        return true;
+                    }
+                    count++;
+
+                    lastNode = tempNode;
+                    tempNode = tempNode.NextNode;
+                }
+            }
+
+            return false;
+        }
     }
 }
